@@ -1,25 +1,38 @@
 <html>
     <head>
         <title>Socket.IO chat</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <style>
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { font: 13px Helvetica, Arial; }
           form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-          form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-          form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-          #messages { list-style-type: none; margin: 0; padding: 0; }
+          form input { border: 0; padding: 10px;  margin-right: 0.5%; width: 90%; }
+          form button { width:9% ; background: rgb(130, 224, 255); border: none; padding: 10px; } */ 
+          #messages { list-style-type: none; margin: 0; padding: 0;  }
           #messages li { padding: 5px 10px; }
-          #messages li:nth-child(odd) { background: #eee; }
+          #messages li:nth-child(odd) { background: #eee;}
+          .container-fluid { height: 100%;}
+          .row { height: 100%;}
         </style>
       </head>
     <body>
-        <h1>
-            Welcome to chatbox
-        </h1>
-        <ul id="messages"></ul>
-        <form action="">
-          <input id="m" autocomplete="off" />
-          <button>Send</button>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3 bg-info">
+            <h1>Active Users</h1>
+            <ul id="userlist"></ul>
+          </div>
+          <div class="col-9 bg-success">
+            <h1 id = "currentusername">
+                Welcome to chatbox
+            </h1>
+            <ul id="messages"></ul>
+          </div>
+        </div>
+      </div>
+      <form action="">
+        <input id="m" autocomplete="off" />
+        <button >Send</button>
         </form>
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js" ></script>
         <script src = "https://code.jquery.com/jquery-3.4.1.min.js" ></script>

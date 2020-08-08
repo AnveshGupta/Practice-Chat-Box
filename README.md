@@ -1,4 +1,4 @@
 
-# Test-Chat-Box
-  - Created using socket.IO and NodeJs.
-  - Private chatting feature available.
+# Private Messaging Web App
+  - socket.Io is used a client-server application framework.
+  - Server created on NodeJS.
